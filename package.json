@@ -1,0 +1,26 @@
+{
+  "name": "alexpearson",
+  "version": "1.0.0",
+  "description": "A simple portfolio site for Savvy Coders",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "firebase deploy",
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAlexPear/savvy-portfolio-alex-pearson.git"
+  },
+  "author": "Alex Pearson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson/issues"
+  },
+  "homepage": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson#readme",
+  "public": false,
+  "devDependencies": {
+    "firebase-tools": "^3.9.1",
+    "http-server": "^0.10.0"
+  }
+}
