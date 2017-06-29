@@ -1,0 +1,28 @@
+h1{
+    color: #07c4dd;
+    font-size: 4em;
+    font-style: italic;
+    text-align: center;
+}
+
+img{
+    width: 400px;
+    height: auto;
+}
+
+ol{
+    font-size: 2em;
+}
+
+li{
+    margin-bottom: 0.5em;
+}
+
+.highlight{
+    background-color: yellow;
+}
+
+#subtitle{
+    font-size: 0.75em;
+    font-style: italic;
+}
