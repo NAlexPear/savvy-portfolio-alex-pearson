@@ -6,8 +6,11 @@ h1{
 }
 
 img{
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 ol{
@@ -22,8 +25,9 @@ li{
     background-color: yellow;
 }
 
-.content{
-    font-family: sans-serif;
+.container{
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 #subtitle{
