@@ -1,11 +1,10 @@
 {
   "name": "alexpearson",
   "version": "1.0.0",
-  "description": "A simple portfolio site for Savvy Coders",
+  "description": "An example portfolio project for the June 2017 Savvy Coders cohort",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "firebase deploy",
     "start": "http-server ."
   },
   "repository": {
@@ -13,14 +12,12 @@
     "url": "git+https://github.com/NAlexPear/savvy-portfolio-alex-pearson.git"
   },
   "author": "Alex Pearson",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson/issues"
   },
   "homepage": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson#readme",
-  "public": false,
   "devDependencies": {
-    "firebase-tools": "^3.9.1",
     "http-server": "^0.10.0"
   }
 }
