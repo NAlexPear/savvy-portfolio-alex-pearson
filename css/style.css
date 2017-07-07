@@ -21,16 +21,79 @@ li{
     margin-bottom: 0.5em;
 }
 
-.highlight{
-    background-color: yellow;
+ol > li:hover{
+    font-size: 2.1em;
 }
 
 .container{
   max-width: 750px;
   margin: 0 auto;
+  padding-right: 10em;
 }
+
+.container + div > ul > li {
+    background-color: green;
+}
+
+.container > ol > li:nth-child(2){
+    background-color: hotpink;
+}
+
+.container > ol > li:nth-child(2n + 1){
+    background-color: yellow;
+}
+
+.relative{
+    position: relative;
+}
+
+.avatar{
+    margin: 1em;
+    width: 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    z-index: 1;
+}
+
+.menu:hover + .sidebar{
+    right: 0;
+}
+
+
+.sidebar{
+    padding-top: 5em;
+    background-color: hotpink;
+    position: fixed;
+    top: 0;
+    right: -10em;
+    width: 10em;
+    height: 100vh;
+    transition: right 0.15s ease;
+
+}
+
+.sidebar:hover{
+    right: 0;
+}
+
+.sidebar li{
+    background-color: blue;
+}
+
 
 #subtitle{
     font-size: 0.75em;
     font-style: italic;
+    margin-left: 5em;
 }
