@@ -3,6 +3,7 @@ h1{
     font-size: 4em;
     font-style: italic;
     text-align: center;
+    font-family: 'Lobster Two', sans-serif;
 }
 
 img{
@@ -96,4 +97,13 @@ ol > li:hover{
     font-size: 0.75em;
     font-style: italic;
     margin-left: 5em;
+}
+
+.button,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit']{
+  background-color: hotpink;
+  border: hotpink;
 }
