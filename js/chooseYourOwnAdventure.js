@@ -16,32 +16,49 @@ var story = {
     },
     "pass": {
         "prompt": "You wander farther into the woods, promptly get lost, and are never seen or heard from again"
+    },
+    "cellar": {
+        "prompt": "Obviously the cellar is where wayward travelers go do die"
+    },
+    "balcony": {
+        "prompt": "There's no forest OSHA, so you walk out on the balcony just as it collapses into a ravine. You're probably fine, but that's for another story."
     }
 };
 
 var response;
 
-var outputToUser = function outputToUser( choice ){
-    document.querySelector( "#output" ).textContent = story[choice].prompt;
+var outputToUser = function outputToUser( prompt ){
+    document.querySelector( "#output" ).textContent = prompt;
 };
 
-var responseFromUser = function responseFromUser( choice ){
+var setResponseFromUser = function responseFromUser( choice ){
     response = prompt( story[choice].prompt );
 };
 
-var runAdventure = function runAdventure( branch ){
-    var options = branch.options;
+var setResponseFromContext = function responseFromContext( options, choice ){
+    var matchesOption = response === options[0] || response === options[1];
 
-    responseFromUser( branch );
-
-    if( response === options[0] ){
-        responseFromUser( options[0] );
+    if( !matchesOption ){
+        response = choice;
     }
-    else if( response === options[1] ){
-        outputToUser( options[1] );
+};
+
+var handleBranchingOptions = function handleBranchingOptions( options, choice ){
+    setResponseFromUser( choice );
+    setResponseFromContext( options, choice );
+};
+
+var runAdventure = function runAdventure( choice ){
+    var branch = story[choice];
+    var options = branch.options;
+    var prompt = branch.prompt;
+
+    if( options ){
+        handleBranchingOptions( options, choice );
+        runAdventure( response );
     }
     else{
-        runAdventure( branch );
+        outputToUser( prompt );
     }
 };
 
