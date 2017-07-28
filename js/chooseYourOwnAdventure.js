@@ -16,6 +16,12 @@ var story = {
     },
     "pass": {
         "prompt": "You wander farther into the woods, promptly get lost, and are never seen or heard from again"
+    },
+    "cellar": {
+        "prompt": "Obviously the cellar is where wayward travelers go do die"
+    },
+    "balcony": {
+        "prompt": "There's no forest OSHA, so you walk out on the balcony just as it collapses into a ravine. You're probably fine, but that's for another story."
     }
 };
 
@@ -25,23 +31,26 @@ var outputToUser = function outputToUser( choice ){
     document.querySelector( "#output" ).textContent = story[choice].prompt;
 };
 
-var responseFromUser = function responseFromUser( choice ){
-    response = prompt( story[choice].prompt );
+var responseFromUser = function responseFromUser( branch ){
+    response = prompt( branch.prompt );
 };
 
-var runAdventure = function runAdventure( branch ){
+var runAdventure = function runAdventure( choice ){
+    var branch = story[choice];
     var options = branch.options;
 
-    responseFromUser( branch );
+    if( options ){
+        responseFromUser( branch );
 
-    if( response === options[0] ){
-        responseFromUser( options[0] );
-    }
-    else if( response === options[1] ){
-        outputToUser( options[1] );
+        if( response === options[0] || response === options[1] ){
+            runAdventure( response );
+        }
+        else{
+            runAdventure( choice );
+        }
     }
     else{
-        runAdventure( branch );
+        outputToUser( choice );
     }
 };
 
