@@ -35,19 +35,22 @@ var responseFromUser = function responseFromUser( branch ){
     response = prompt( branch.prompt );
 };
 
+var responseFromOptions = function responseFromOptions( options, choice ){
+    var matchesOption = response === options[0] || response === options[1];
+
+    if( !matchesOption ){
+        response = choice;
+    }
+};
+
 var runAdventure = function runAdventure( choice ){
     var branch = story[choice];
     var options = branch.options;
 
     if( options ){
         responseFromUser( branch );
-
-        if( response === options[0] || response === options[1] ){
-            runAdventure( response );
-        }
-        else{
-            runAdventure( choice );
-        }
+        responseFromOptions( options, choice );
+        runAdventure( response );
     }
     else{
         outputToUser( choice );
