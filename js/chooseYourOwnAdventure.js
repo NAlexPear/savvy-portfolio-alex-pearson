@@ -1,7 +1,7 @@
 var story = {
     "intro": {
         "prompt": "Welcome to your next adventure! Would you like to go to the woods or onto the airplane? Please type 'woods' or 'airplane'",
-        "options": [ "woods", "airplane" ]
+        "options": [ "woods", "airplane", "pass", "balcony" ]
     },
     "woods": {
         "prompt": "You march resolutely into the forbidding forest, confident in your survival skills and general daring-do. As you wander, you come across a castle. Do you enter, or pass on your way? Please type 'enter' or 'pass'",
@@ -12,7 +12,7 @@ var story = {
     },
     "enter": {
         "prompt": "You see a dark cellar and a bright balcony. Which should you explore first? Type 'cellar' or 'balcony'",
-        "options": [ "cellar", "balcony" ]
+        "options": [ "cellar", "balcony", "intro" ]
     },
     "pass": {
         "prompt": "You wander farther into the woods, promptly get lost, and are never seen or heard from again"
@@ -25,6 +25,7 @@ var story = {
     }
 };
 
+var matchesOption = false;
 var response;
 
 var outputToUser = function outputToUser( choice ){
@@ -35,9 +36,21 @@ var responseFromUser = function responseFromUser( branch ){
     response = prompt( branch.prompt );
 };
 
-var responseFromOptions = function responseFromOptions( options, choice ){
-    var matchesOption = response === options[0] || response === options[1];
+var evaluateOptions = function evaluateOptions( options ){
+    var i = 0;
 
+    while( i < options.length ){
+        if( response === options[i] ){
+            matchesOption = true;
+        }
+
+        i++;
+    }
+};
+
+var responseFromOptions = function responseFromOptions( options, choice ){
+    evaluateOptions( options );
+    
     if( !matchesOption ){
         response = choice;
     }
