@@ -25,7 +25,6 @@ var story = {
     }
 };
 
-var matchesOption = false;
 var response;
 
 var outputToUser = function outputToUser( prompt ){
@@ -37,21 +36,11 @@ var responseFromUser = function responseFromUser( branch ){
 };
 
 var evaluateOptions = function evaluateOptions( options ){
-    var i = 0;
-
-    while( i < options.length ){
-        if( response === options[i] ){
-            matchesOption = true;
-        }
-
-        i++;
-    }
+    return options.reduce( ( acc, option ) => acc || response === option, false );
 };
 
 var responseFromOptions = function responseFromOptions( options, choice ){
-    evaluateOptions( options );
-
-    if( !matchesOption ){
+    if( evaluateOptions( options ) ){
         response = choice;
     }
 };
