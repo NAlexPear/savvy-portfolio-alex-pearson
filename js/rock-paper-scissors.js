@@ -34,11 +34,12 @@ function compareChoices( user, computer ){
     return result;
 }
 
-function playRockPaperScissors(){
-    var input = prompt( "Choose rock, paper, or scissors!" );
+function playRockPaperScissors( event ){
     var random = Math.random();
     var computer = generateComputerChoice( random );
-    var result = compareChoices( input, computer );
+    var result = compareChoices( event.target.textContent, computer );
 
     document.querySelector( "#output" ).textContent = result;
 }
+
+$( "button" ).on( "click", playRockPaperScissors );
