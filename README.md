@@ -1,12 +1,3 @@
-# Alex's Haiku
+# Alex's Savvy Coders Portfolio Project
 
-Haikus are easy
-
-_But endings are difficult_
-
-**Refrigerator**
-
----
-
-
--_a haiku by Alex_
+Welcome to my page, thanks for stopping by!
