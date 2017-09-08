@@ -2,13 +2,50 @@ h1 {
   color: hotpink;
 }
 
-div {
-  background-color: chartreuse;
-  color: blue;
-}
-
 #content {
   border-width: 2px;
   border-color: magenta;
   border-style: solid;
+  background-color: red;
+}
+
+.navigation {
+  background-color: transparent;
+}
+
+.navigation > a {
+  color: orange;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+.navigation + div + div {
+  background-color: chartreuse;
+  color: blue;
+}
+
+.navigation + div li:first-child {
+  background-color: yellow;
+}
+
+.navigation li:last-child {
+  background-color: cornflowerblue;
+}
+
+ol > li:nth-child(2) {
+  background-color: hotpink;
+}
+
+ol > li:nth-child(3n) {
+  background-color: lime;
+}
+
+ol > li:nth-child(3n + 1) {
+  background-color: orange;
+}
+
+ol > li:hover {
+  background-color: purple;
 }
