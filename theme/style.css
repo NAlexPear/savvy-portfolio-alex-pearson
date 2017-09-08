@@ -7,10 +7,8 @@ div {
   color: blue;
 }
 
-.slanted {
-  font-style: italic;
-}
-
-#emphatic {
-  font-weight: bold;
+#content {
+  border-width: 2px;
+  border-color: magenta;
+  border-style: solid;
 }
