@@ -1,3 +1,7 @@
+body {
+  background-color: lightgrey;
+}
+
 h1 {
   color: hotpink;
 }
@@ -9,8 +13,15 @@ h1 {
   background-color: red;
 }
 
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 .navigation {
   background-color: transparent;
+  width: 100vw;
+  background-color: yellow;
 }
 
 .navigation > a {
@@ -26,6 +37,11 @@ h1 {
   color: blue;
 }
 
+.navigation li {
+  margin: 20px 0;
+  padding: 10px;
+}
+
 .navigation + div li:first-child {
   background-color: yellow;
 }
@@ -34,12 +50,20 @@ h1 {
   background-color: cornflowerblue;
 }
 
+.footer {
+  width: 100vw;
+}
+
+.fancy {
+  font-family: monospace;
+}
+
 ol > li:nth-child(2) {
   background-color: hotpink;
 }
 
 ol > li:nth-child(3n) {
-  background-color: lime;
+  background-color: #e0ccc5;
 }
 
 ol > li:nth-child(3n + 1) {
