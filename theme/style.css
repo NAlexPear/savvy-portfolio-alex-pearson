@@ -18,10 +18,37 @@ h1 {
   margin: 0 auto;
 }
 
+.navigation li:last-child {
+  position: relative;
+}
+
+.navigation li:last-child:hover li{
+  display: list-item;
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.navigation .dropdown li {
+  list-style: circle;
+  display: none;
+}
+
 .navigation {
   background-color: transparent;
   width: 100vw;
   background-color: yellow;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.navigation ul {
+  height: 30px;
+
 }
 
 .navigation > a {
@@ -40,6 +67,9 @@ h1 {
 .navigation li {
   margin: 20px 0;
   padding: 10px;
+  height: 100%;
+  display: inline;
+  list-style: none;
 }
 
 .navigation + div li:first-child {
