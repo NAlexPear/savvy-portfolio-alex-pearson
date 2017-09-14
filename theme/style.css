@@ -13,6 +13,31 @@ h1 {
   background-color: red;
 }
 
+#menu {
+  font-family: sans-serif;
+  margin: 80px;
+  display: inline;
+  cursor: pointer;
+  position: relative;
+}
+
+#menu > ul {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  position: absolute;
+  top: 17px;
+  left: 0;
+
+  display: none;
+}
+
+#menu:hover > ul {
+  display: list-item;
+}
+
 .container {
   max-width: 750px;
   margin: 0 auto;
@@ -46,11 +71,6 @@ h1 {
   right: 0;
 }
 
-.navigation ul {
-  height: 30px;
-
-}
-
 .navigation > a {
   color: orange;
 }
@@ -62,14 +82,6 @@ h1 {
 .navigation + div + div {
   background-color: chartreuse;
   color: blue;
-}
-
-.navigation li {
-  margin: 20px 0;
-  padding: 10px;
-  height: 100%;
-  display: inline;
-  list-style: none;
 }
 
 .navigation + div li:first-child {
