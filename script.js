@@ -1,7 +1,12 @@
-var userInput = prompt( "What is your name?" );
+function promptAndGreetUser(){
+    var userInput = prompt( "What is your name?" );
 
-if( !userInput ){
-    userInput = prompt( "What's your name, for reals this time?" );
+    if( !userInput ){
+        promptAndGreetUser();
+    }
+    else{
+        alert( "Hello, " + userInput );
+    }
 }
 
-alert( "Hello, " + userInput );
+promptAndGreetUser();
