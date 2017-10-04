@@ -18,7 +18,17 @@ var story = {
         "prompt": "You turn around (uh-oh), and find that Der Komissar's in town (uh-oh!). You continue dancing into the sunset."
     },
     "approach": {
-        "prompt": "As you get close, you are trampled by camels. A few of them also spit on you. It's very humiliating, and terminal."
+        "prompt": "As you get close, you are trampled by camels. A few of them also spit on you. Should you fight back or run away? Type 'fight' or 'flee' or 'fillibuster'",
+        "choices": [ "fight", "flee", "fillibuster" ]
+    },
+    "fight": {
+        "prompt": "You're trampled, duh"
+    },
+    "flee": {
+        "prompt": "Run awaaaay!"
+    },
+    "fillibuster": {
+        "prompt": "You haven't the number of votes required to block this legislation, but you can hold the floor, preventing a vote"
     },
     "wait": {
         "prompt": "What could you possibly be waiting for? It's a desert! You run out of water, thinking of how delicious camel must taste instead of sand."
@@ -30,6 +40,7 @@ function runStory( node ){
     var branch = story[node];
     var choices = branch.choices;
     var userInput;
+    var isCorrectChoice = false;
 
     if( !choices ){
         alert( branch.prompt );
@@ -37,7 +48,11 @@ function runStory( node ){
     else{
         userInput = prompt( branch.prompt );
 
-        if( userInput === choices[0] || userInput === choices[1] ){
+        for( let i = 0; !isCorrectChoice && i < choices.length; i++ ){
+            isCorrectChoice = userInput === choices[i];
+        }
+
+        if( isCorrectChoice ){
             runStory( userInput );
         }
         else{
