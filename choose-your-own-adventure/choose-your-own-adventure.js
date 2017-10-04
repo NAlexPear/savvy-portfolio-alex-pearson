@@ -35,12 +35,20 @@ var story = {
     }
 };
 
-/* eslint-disable complexity */
+function validateChoice( userInput, choices ){
+    var isCorrectChoice = false;
+
+    for( let i = 0; !isCorrectChoice && i < choices.length; i++ ){
+        isCorrectChoice = userInput === choices[i];
+    }
+
+    return isCorrectChoice;
+}
+
 function runStory( node ){
     var branch = story[node];
     var choices = branch.choices;
     var userInput;
-    var isCorrectChoice = false;
 
     if( !choices ){
         alert( branch.prompt );
@@ -48,11 +56,7 @@ function runStory( node ){
     else{
         userInput = prompt( branch.prompt );
 
-        for( let i = 0; !isCorrectChoice && i < choices.length; i++ ){
-            isCorrectChoice = userInput === choices[i];
-        }
-
-        if( isCorrectChoice ){
+        if( validateChoice( userInput, choices ) ){
             runStory( userInput );
         }
         else{
