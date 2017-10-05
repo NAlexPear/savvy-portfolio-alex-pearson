@@ -35,16 +35,6 @@ var story = {
     }
 };
 
-function validateChoice( userInput, choices ){
-    var isCorrectChoice = false;
-
-    for( let i = 0; !isCorrectChoice && i < choices.length; i++ ){
-        isCorrectChoice = userInput === choices[i];
-    }
-
-    return isCorrectChoice;
-}
-
 function runStory( node ){
     var branch = story[node];
     var choices = branch.choices;
@@ -56,7 +46,7 @@ function runStory( node ){
     else{
         userInput = prompt( branch.prompt );
 
-        if( validateChoice( userInput, choices ) ){
+        if( choices.some( ( choice ) => userInput === choice ) ){
             runStory( userInput );
         }
         else{
