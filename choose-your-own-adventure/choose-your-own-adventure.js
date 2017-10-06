@@ -1,3 +1,4 @@
+/* globals $ */
 var story = {
     "start": {
         "prompt": "You find yourself looking over a vast desert, low on water. Would you like to dig for water where you stand, or would you like to search for an oasis? Type 'dig' or 'search', please.",
@@ -41,7 +42,7 @@ function runStory( node ){
     var userInput;
 
     if( !choices ){
-        alert( branch.prompt );
+        $( "#output" ).text( branch.prompt );
     }
     else{
         userInput = prompt( branch.prompt );

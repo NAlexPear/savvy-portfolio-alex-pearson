@@ -1,0 +1,23 @@
+{
+  "name": "alexpearson",
+  "version": "1.0.0",
+  "description": "Welcome to my page, thanks for stopping by!",
+  "main": "script.js",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAlexPear/savvy-portfolio-alex-pearson.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson/issues"
+  },
+  "homepage": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson#readme"
+}
