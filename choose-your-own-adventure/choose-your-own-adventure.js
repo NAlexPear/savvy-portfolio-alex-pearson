@@ -36,16 +36,19 @@ var story = {
     }
 };
 
-function runStory( node ){
-    var branch = story[node];
-    var choices = branch.choices;
-    var userInput;
+var $form = $( "form" );
+var $inputField = $( "input[type='text']" );
+var $input = $( "#input" );
+var $output = $( "#output" );
 
-    if( !choices ){
-        $( "#output" ).text( branch.prompt );
-    }
-    else{
-        userInput = prompt( branch.prompt );
+/* eslint-disable no-use-before-define */
+function generateRespondToFormSubmit( node ){
+    var choices = story[node].choices;
+
+    return ( event ) => {
+        var userInput = $inputField.val();
+
+        event.preventDefault();
 
         if( choices.some( ( choice ) => userInput === choice ) ){
             runStory( userInput );
@@ -53,6 +56,21 @@ function runStory( node ){
         else{
             runStory( node );
         }
+    };
+}
+
+
+function runStory( node ){
+    var branch = story[node];
+    var choices = branch.choices;
+
+    if( !choices ){
+        $output.text( branch.prompt );
+    }
+    else{
+        $form.off( "submit" );
+        $input.text( branch.prompt );
+        $form.on( "submit", generateRespondToFormSubmit( node ) );
     }
 }
 
