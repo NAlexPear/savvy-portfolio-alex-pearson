@@ -1,0 +1,21 @@
+body {
+  background-color: chartreuse;
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+ul {
+  background-color: cornflowerblue;
+}
+
+.extra-pink {
+  color: hotpink;
+}
+
+#subheader {
+  font-style: italic;
+  color: lightgrey;
+  font-weight: 500;
+}
