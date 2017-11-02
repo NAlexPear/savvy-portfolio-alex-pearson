@@ -1,9 +1,54 @@
+.container {
+  max-width: 750px;
+  margin: 10px auto;
+}
+
+ul.container > li {
+  background-color: purple;
+  margin: 5px;
+}
+
+.navigation {
+  padding: 10px;
+  background-color: hotpink;
+}
+
+.header {
+  padding: 25px;
+  background-color: red;
+}
+
+.header h2 {
+  color: orange;
+}
+
+.header h2 + h3 {
+  color: aquamarine;
+}
+
+.navigation ~ div {
+  background-color: fuchsia;
+}
+
+.content {
+  background-color: lightgrey;
+
+  padding: 50px;
+}
+
+.footer {
+  padding: 10px;
+  background-color: tomato;
+}
+
 body {
   background-color: chartreuse;
+  margin: 0;
 }
 
 h2 {
   font-family: sans-serif;
+  color: white;
 }
 
 ul {
