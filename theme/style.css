@@ -1,16 +1,49 @@
+body {
+  background-color: chartreuse;
+  margin: 0;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: white;
+}
+
+ul {
+  background-color: cornflowerblue;
+}
+
 .container {
   max-width: 750px;
   margin: 10px auto;
 }
 
-ul.container > li {
-  background-color: purple;
-  margin: 5px;
-}
-
 .navigation {
   padding: 10px;
   background-color: hotpink;
+}
+
+.navigation > ul > li {
+  position: relative;
+  list-style: none;
+  display: inline;
+  margin: 5px;
+}
+
+.navigation .dropdown {
+  position: absolute;
+  top: 18px;
+  right: -18px;
+  padding: 10px;
+  display: none;
+}
+
+.navigation .dropdown li {
+  margin: 10px;
+}
+
+.navigation a:hover + .dropdown,
+.dropdown:hover {
+  display: block;
 }
 
 .header {
@@ -26,33 +59,15 @@ ul.container > li {
   color: aquamarine;
 }
 
-.navigation ~ div {
-  background-color: fuchsia;
-}
 
 .content {
   background-color: lightgrey;
-
   padding: 50px;
 }
 
 .footer {
   padding: 10px;
   background-color: tomato;
-}
-
-body {
-  background-color: chartreuse;
-  margin: 0;
-}
-
-h2 {
-  font-family: sans-serif;
-  color: white;
-}
-
-ul {
-  background-color: cornflowerblue;
 }
 
 .extra-pink {
