@@ -3,17 +3,8 @@
   margin: 10px auto;
 }
 
-ul.container > li {
-  background-color: purple;
-  margin: 5px;
-}
-
-.navigation {
-  padding: 10px;
-  background-color: hotpink;
-}
-
 .header {
+  margin-top: 50px;
   padding: 25px;
   background-color: red;
 }
@@ -26,8 +17,39 @@ ul.container > li {
   color: aquamarine;
 }
 
+.navigation {
+  padding: 10px;
+  background-color: hotpink;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+}
+
 .navigation ~ div {
   background-color: fuchsia;
+}
+
+.navigation > ul > li {
+  margin: 5px;
+  display: inline;
+  position: relative;
+}
+
+.navigation > ul > li:hover {
+  background-color: chocolate;
+}
+
+.navigation .dropdown {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: none;
+}
+
+.navigation a:hover + .dropdown,
+.navigation .dropdown:hover {
+  display: block;
 }
 
 .content {
@@ -63,4 +85,33 @@ ul {
   font-style: italic;
   color: lightgrey;
   font-weight: 500;
+}
+
+#funky-list {
+  background-color: tomato;
+}
+
+
+#funky-list > li:first-child {
+  background-color: firebrick;
+}
+
+#funky-list > li:last-child {
+  background-color: lawngreen;
+}
+
+#funky-list > li:nth-child(2) {
+  background-color: red;
+}
+
+#funky-list > li:nth-child(3n) {
+  background-color: cyan;
+}
+
+#funky-list > li:nth-child(2n+1) {
+  background-color: violet;
+}
+
+#funky-list li:hover {
+  background-color: yellow;
 }
