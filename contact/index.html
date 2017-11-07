@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=`device-width`, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alex's Super Sweet Contact Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css">
+  <link rel="stylesheet" href="/theme/style.css">
+</head>
+<body>
+  <div class="navigation">
+    <ul class="container">
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/projects">Projects</a>
+        <ul class="dropdown">
+          <li><a href="#">First Project</a></li>
+          <li><a href="#">Second Project</a></li>
+          <li><a href="#">Third Project</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="container">
+      <form action="https://formspree.io/alex@savvycoders.com" method="POST">
+        <input type="text" name="firstname" placeholder="First Name" size="100" autofocus required>
+        <input type="text" name="lastname" placeholder="Last Name" size="100" required>
+        <input type="email" name="userEmail" placeholder="your.email@example.com">
+
+        <label>What's this message about?
+          <input type="radio" name="subject" value="professional"><span>I'd like to hire you!</span>
+          <input type="radio" name="subject" value="personal" checked><span>Personal message</span>
+          <input type="radio" name="subject" value="other"><span>Don't know/something else</span>
+        </label>
+
+        <input type="checkbox" name="optin" value="trusting" checked>Subscribe me to your newsletter!
+        <input type="checkbox" name="optout" value="skeptical" disabled>Cheeky checkbox...
+
+        <label for="marketing">How did you hear about me?</label>
+        <select name="marketing">
+          <optgroup label="Online">
+            <option value="social">Social Media (FB, Twitter, LinkedIn)</option>
+            <option value="github">Online Portfolio (GitHub)</option>
+            <option value="search">Search Engine</option>
+            <option value="email">Email</option>
+          </optgroup>
+          <optgroup label="In-Person">
+            <option value="networking">We met at a networking event</option>
+            <option value="referral">Personal referral</option>
+            <option value="random">We met somewhere else</option>
+          </optgroup>
+          <option value="other">Other</option>
+        </select>
+
+        <textarea name="user_message" rows="8" cols="40"></textarea>
+        <input type="submit">
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container"></div>
+  </div>
+</body>
+</html>
