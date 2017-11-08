@@ -1,0 +1,19 @@
+#grid {
+  display: grid;
+}
+
+#grid > div {
+  background-color: hotpink;
+  padding: 1em;
+  margin: 0.25em;
+}
+
+#grid > div:first-child {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 415px) {
+  #grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
