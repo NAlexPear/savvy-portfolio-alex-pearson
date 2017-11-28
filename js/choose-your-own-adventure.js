@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 var story = {
     "start": {
         "text": "You find yourself suddenly teleported to an interdimensional hub filled with arthropod-like creatures that seem to ignore you. Would you like to travel further into the Hive or make a break for whatever appears to be 'outside'?",
@@ -18,33 +19,40 @@ var story = {
     }
 };
 
-var runStory = function runStory( branch ){
-    var chapter = story[branch];
-    var choices = chapter.choices;
+function validateChoice( choice, choices ){
     var isValidChoice = false;
-    var choice;
 
-    if( choices ){
-        choice = prompt( chapter.text );
+    for( let i = 0; i < choices.length; i++ ){
+        if( choice === choices[i] ){
+            isValidChoice = true;
+        }
+    }
 
-        for( var i = 0; i < choices.length; i++ ){
-            if( choice === choices[i] ){
-                isValidChoice = true;
-            }
-        }
+    return isValidChoice;
+}
 
-        if( isValidChoice ){
-            runStory( choice );
-        }
-        else{
-            runStory( branch );
-        }
+function handleChoices( chapter, branch ){
+    var choice = prompt( chapter.text );
+
+    if( validateChoice( choice, chapter.choices ) ){
+        runStory( choice );
+    }
+    else{
+        runStory( branch );
+    }
+}
+
+function runStory( branch ){
+    var chapter = story[branch];
+
+    if( chapter.choices ){
+        handleChoices( chapter, branch );
     }
     else{
         document
             .querySelector( "#output" )
             .textContent = chapter.text;
     }
-};
+}
 
 runStory( "start" );
