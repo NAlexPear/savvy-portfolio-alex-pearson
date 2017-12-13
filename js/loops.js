@@ -1,5 +1,5 @@
 /* eslint-disable complexity, no-console */
-var generateEvenListItems = function generateEvenListItems(){
+function generateEvenListItems(){
     var evens = document.querySelector( "#evens" );
     var listItemString = "";
 
@@ -10,10 +10,11 @@ var generateEvenListItems = function generateEvenListItems(){
     }
 
     evens.innerHTML = listItemString;
-};
+}
 
 var fizzBuzzResult = "";
-var fizzBuzz = function fizzBuzz( num ){
+
+function fizzBuzz( num ){
     if( num % 15 === 0 ){
         fizzBuzzResult += ", FizzBuzz";
     }
@@ -29,21 +30,22 @@ var fizzBuzz = function fizzBuzz( num ){
     else{
         fizzBuzzResult += ", " + num;
     }
-};
+}
 
-var fizzBuzzLightyear = function fizzBuzzLightyear( limit ){
+function fizzBuzzLightyear( limit ){
     for( var i = 1; i <= limit; i++ ){
         fizzBuzz( i );
     }
-};
+}
 
-var makeListItems = function makeListItems(){
+function makeListItems(){
     var listItems = document.querySelectorAll( "li" );
+    var listArray = Array.from( listItems );
 
-    for( var i = 0; i < listItems.length; i++ ){
-        listItems[i].textContent = i + 1;
+    for( var i = 0; i < listArray.length; i++ ){
+        listArray[i].textContent = i + 1;
     }
-};
+}
 
 fizzBuzzLightyear( 50 );
 makeListItems();
