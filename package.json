@@ -1,0 +1,23 @@
+{
+  "name": "savvy-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAlexPear/savvy-portfolio-alex-pearson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson/issues"
+  },
+  "homepage": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
