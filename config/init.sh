@@ -31,6 +31,10 @@ if [ ! $(which parcel) ]; then
   npm install -g parcel-bundler;
 fi
 
+if [ ! $(which http-server) ]; then
+  npm install -g http-server;
+fi
+
 # Install local/dev dependecies
 npm install --save-dev eslint;
 
