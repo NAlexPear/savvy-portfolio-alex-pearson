@@ -1,16 +1,21 @@
-export default function Navigation(){
+function buildLinks(linkArray){
+    var i = 0;
+    var links = '';
+
+    while(i < linkArray.length){
+        links += `<li><a href='/${linkArray[i]}'>${linkArray[i]}</a></li>`;
+
+        i++;
+    }
+
+    return links;
+}
+
+export default function Navigation(state){
     return `
     <div id="navigation">
         <ul>
-            <li>
-                <a href="/blog">Blog</a>
-            </li>
-            <li>
-                <a href="/contact">Contact</a>
-            </li>
-            <li>
-                <a href="/projects">Projects</a>
-            </li>
+            ${buildLinks(state.links)}
         </ul>
     </div>
     `;

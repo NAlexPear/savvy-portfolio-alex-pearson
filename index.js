@@ -3,18 +3,55 @@ import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 
-var home = {
-    'title': 'Welcome to my Portfolio'
-};
-
-var blog = {
-    'title': 'Welcome to my Blog'
+var STATE = {
+    'Home': {
+        'links': [
+            'Blog',
+            'Contact',
+            'Projects'
+        ],
+        'title': 'Welcome to my Portfolio'
+    },
+    'Blog': {
+        'links': [
+            'Home',
+            'Contact',
+            'Projects'
+        ],
+        'title': 'Welcome to my Blog'
+    },
+    'Contact': {
+        'links': [
+            'Home',
+            'Blog',
+            'Projects'
+        ],
+        'title': 'Contact Me'
+    },
+    'Projects': {
+        'links': [
+            'Home',
+            'Blog',
+            'Contact'
+        ],
+        'title': 'Check out some of my projects'
+    }
 };
 
 var root = document.querySelector('#root');
 
+function handleNavigation(event){
+    var page = event.target.textContent;
+
+    event.preventDefault();
+
+    startApp(STATE[page]);
+}
 
 function startApp(state){
+    var i = 0;
+    var links;
+
     root.innerHTML = `
       ${Navigation(state)}
       ${Header(state)}
@@ -22,16 +59,16 @@ function startApp(state){
       ${Footer(state)}
     `;
 
-    document
-        .querySelector('#navigation a')
-        .addEventListener(
-            'click',
-            (event) => {
-                event.preventDefault();
+    links = document.querySelectorAll('#navigation a');
 
-                startApp(blog);
-            }
+    while(i < links.length){
+        links[i].addEventListener(
+            'click',
+            handleNavigation
         );
+
+        i++;
+    }
 }
 
-startApp(home);
+startApp(STATE['Home']);

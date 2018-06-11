@@ -195,7 +195,7 @@
         "no-unmodified-loop-condition": "error",
         "no-unneeded-ternary": "off",
         "no-unused-expressions": "off",
-        "no-use-before-define": "error",
+        "no-use-before-define": "off",
         "no-useless-call": "off",
         "no-useless-concat": "off",
         "no-useless-constructor": "error",
