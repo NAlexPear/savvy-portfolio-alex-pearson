@@ -2,41 +2,8 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import * as states from './store';
 
-var STATE = {
-    'Home': {
-        'links': [
-            'Blog',
-            'Contact',
-            'Projects'
-        ],
-        'title': 'Welcome to my Portfolio'
-    },
-    'Blog': {
-        'links': [
-            'Home',
-            'Contact',
-            'Projects'
-        ],
-        'title': 'Welcome to my Blog'
-    },
-    'Contact': {
-        'links': [
-            'Home',
-            'Blog',
-            'Projects'
-        ],
-        'title': 'Contact Me'
-    },
-    'Projects': {
-        'links': [
-            'Home',
-            'Blog',
-            'Contact'
-        ],
-        'title': 'Check out some of my projects'
-    }
-};
 
 var root = document.querySelector('#root');
 
@@ -45,7 +12,7 @@ function handleNavigation(event){
 
     event.preventDefault();
 
-    startApp(STATE[page]);
+    startApp(states[page]);
 }
 
 function startApp(state){
@@ -71,4 +38,4 @@ function startApp(state){
     }
 }
 
-startApp(STATE['Home']);
+startApp(states['Home']);
