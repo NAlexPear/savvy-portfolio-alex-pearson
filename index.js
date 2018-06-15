@@ -3,22 +3,20 @@ import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import * as states from './store';
+import Navigo from 'navigo';
+import { capitalize } from 'lodash';
 
 
 var root = document.querySelector('#root');
+var router = new Navigo();
 
-function handleNavigation(event){
-    var page = event.target.textContent;
-
-    event.preventDefault();
+function handleRoute(params){
+    const page = capitalize(params.page) || 'Home';
 
     startApp(states[page]);
 }
 
 function startApp(state){
-    var i = 0;
-    var links;
-
     root.innerHTML = `
       ${Navigation(state)}
       ${Header(state)}
@@ -26,16 +24,10 @@ function startApp(state){
       ${Footer(state)}
     `;
 
-    links = document.querySelectorAll('#navigation a');
-
-    while(i < links.length){
-        links[i].addEventListener(
-            'click',
-            handleNavigation
-        );
-
-        i++;
-    }
+    router.updatePageLinks();
 }
 
-startApp(states['Home']);
+router
+    .on('/:page', handleRoute)
+    .on('/', handleRoute)
+    .resolve();
