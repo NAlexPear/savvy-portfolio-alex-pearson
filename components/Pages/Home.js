@@ -1,4 +1,4 @@
-export default `
+export default () => `
   <div id="content">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatibus esse vero minus non nulla nam dolorem delectus fugit quam, provident maxime asperiores, facilis doloremque optio ullam. Placeat, consequuntur reiciendis?</p>
       <p>Et at suscipit quos consequatur libero temporibus nisi cupiditate ipsum provident recusandae officiis velit distinctio quod delectus, laboriosam laudantium dolor ex inventore est dolorem earum. Iure saepe fugiat unde eius!</p>
