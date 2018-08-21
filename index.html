@@ -5,47 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Alex Pearson's Portfolio Project</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div style="background-color:papayawhip;">
-      <h1 style="background-color:hotpink">Hello World</h1>
-      <h2 style="color:chartreuse">This should be slightly smaller</h2>
-      <h3>This should be smaller still</h3>
-    </div>
-
-    <div style="color:cadetblue">
-      <em>this should be italicized</em>
-      <strong>this should be bold</strong>
-      <img src="https://avatars2.githubusercontent.com/u/9038489?s=400&u=29a74373a954d705b6bd58542c6b605c74f88426&v=4" alt="my face">
-    </div>
-
-    <div style="background-color:red;color:beige;">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, natus? In delectus deserunt culpa suscipit, molestias sit placeat aspernatur quos cum vero. Eaque ad architecto, eos hic nulla qui maxime?</p>
-      <p style="font-weight:bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi natus, autem delectus architecto itaque atque consequuntur quaerat quo, voluptates aspernatur hic doloremque saepe iste tempore magni vel harum explicabo.</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore odio, error facere tempore, rem recusandae quo iste ex eveniet corrupti, pariatur blanditiis voluptates expedita eos atque excepturi soluta? Odio, distinctio?</p>
-      <ul>
+    <div id="navigation">
+      <ul class="container">
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
         <li>
-          <a href="https://github.com/nalexpear">
-            GitHub profile
-          </a>
+          <a href="blog">blog</a>
         </li>
         <li>
-          <a href="mailto:alex@savvycoders.com">
-            Send me an email
-          </a>
-        </li>
-        <li>
-          <a style="color:tomato" href="https://twitter.com/nalexpearson">
-            @NAlexPearson
-          </a>
+          <a href="projects">projects</a>
+          <ul>
+            <li>drop 1</li>
+            <li>drop 2</li>
+            <li>drop 3</li>
+          </ul>
         </li>
       </ul>
-
-      <ol>
-        <li>First</li>
-        <li>Second</li>
-        <li>Third</li>
-      </ol>
+    </div>
+    <div id="header">
+      <div class="container">
+        <h1>Welcome to My Portfolio Page</h1>
+        <em>this should be italicized</em>
+        <strong>this should be bold</strong>
+        <img src="https://avatars2.githubusercontent.com/u/9038489?s=400&u=29a74373a954d705b6bd58542c6b605c74f88426&v=4" alt="my face">
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, natus? In delectus deserunt culpa suscipit, molestias sit placeat aspernatur quos cum vero. Eaque ad architecto, eos hic nulla qui maxime?</p>
+        <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi natus, autem delectus architecto itaque atque consequuntur quaerat quo, voluptates aspernatur hic doloremque saepe iste tempore magni vel harum explicabo.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore odio, error facere tempore, rem recusandae quo iste ex eveniet corrupti, pariatur blanditiis voluptates expedita eos atque excepturi soluta? Odio, distinctio?</p>
+        <ul>
+          <li>
+            <a href="https://github.com/nalexpear">
+              GitHub profile
+            </a>
+          </li>
+          <li class="whipped">
+            <a href="mailto:alex@savvycoders.com">
+              Send me an email
+            </a>
+          </li>
+          <li>
+            <a class="emphasized" href="https://twitter.com/nalexpearson">
+              @NAlexPearson
+            </a>
+          </li>
+        </ul>
+        <ol>
+          <li class="emphasized">First</li>
+          <li>Second</li>
+          <li>Third</li>
+        </ol>
+        <span>Hello</span>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        this is the bottom of my page!
+      </div>
     </div>
   </body>
 </html>

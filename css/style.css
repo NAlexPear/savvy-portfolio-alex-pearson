@@ -1,0 +1,112 @@
+a {
+  color: cadetblue;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "navigation"
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: min-content min-content auto min-content;
+}
+
+h2 {
+  color: chartreuse;
+}
+
+p {
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+#navigation {
+  background-color: lightblue;
+  color: cadetblue;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+
+#navigation a + ul {
+  background-color: hotpink;
+  display: none;
+  position: absolute;
+  left: 0;
+  list-style: none;
+  padding: 10px;
+}
+
+#navigation a + ul:hover,
+#navigation a:hover + ul {
+  display: flex;
+  flex-direction: column;
+  word-wrap: none;
+}
+
+#navigation > ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#navigation > ul > li {
+  display: inline;
+  position: relative;
+}
+
+#header {
+  color: cadetblue;
+  padding: 10px;
+  text-align: center;
+}
+
+#content {
+  background-color: #eee;
+  padding: 10px;
+}
+
+#content span {
+  background-color: teal;
+}
+
+#content > .container {
+  background-color: hotpink;
+}
+
+#content li {
+  background-color: blue;
+}
+
+#content li:hover {
+  background-color: yellow;
+}
+
+#content + div {
+  background-color: cyan;
+}
+
+#footer {
+  background-color: tomato;
+  color: cadetblue;
+  padding: 10px;
+}
