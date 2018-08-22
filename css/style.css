@@ -13,6 +13,31 @@ body {
   grid-template-rows: min-content min-content auto min-content;
 }
 
+form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 5px;
+}
+
+input[type=text],
+input[type=email] {
+  width: 70%;
+}
+
+input[type=submit] {
+  background-color: lightgrey;
+}
+
+input[type=submit]:hover {
+  background-color: slategray;
+  color: white;
+  cursor: pointer;
+}
+
 h2 {
   color: chartreuse;
 }
@@ -47,7 +72,7 @@ img {
 }
 
 #navigation a + ul {
-  background-color: hotpink;
+  background-color: lightseagreen;
   display: none;
   position: absolute;
   left: 0;
@@ -85,24 +110,8 @@ img {
   padding: 10px;
 }
 
-#content span {
-  background-color: teal;
-}
-
-#content > .container {
-  background-color: hotpink;
-}
-
-#content li {
-  background-color: blue;
-}
-
 #content li:hover {
   background-color: yellow;
-}
-
-#content + div {
-  background-color: cyan;
 }
 
 #footer {
