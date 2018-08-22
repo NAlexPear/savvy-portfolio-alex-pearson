@@ -38,6 +38,10 @@ input[type=submit]:hover {
   cursor: pointer;
 }
 
+label {
+  font-family: 'Zilla Slab Highlight', cursive;
+}
+
 h2 {
   color: chartreuse;
 }
@@ -66,6 +70,7 @@ img {
 #navigation {
   background-color: lightblue;
   color: cadetblue;
+  grid-area: navigation;
   padding: 5px;
   position: sticky;
   top: 0;
@@ -92,6 +97,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 0;
 }
 
 #navigation > ul > li {
@@ -101,12 +107,14 @@ img {
 
 #header {
   color: cadetblue;
+  grid-area: header;
   padding: 10px;
   text-align: center;
 }
 
 #content {
   background-color: #eee;
+  grid-area: content;
   padding: 10px;
 }
 
@@ -116,6 +124,22 @@ img {
 
 #footer {
   background-color: tomato;
+  grid-area: footer;
   color: cadetblue;
   padding: 10px;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    grid-template-areas:
+      "navigation header"
+      "navigation content"
+      "navigation footer";
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: 20vw auto;
+  }
+
+  #navigation > ul{
+    flex-direction: column;
+  }
 }
