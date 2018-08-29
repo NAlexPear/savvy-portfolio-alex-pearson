@@ -2,7 +2,7 @@ a {
   color: cadetblue;
 }
 
-body {
+#root {
   margin: 0;
   display: grid;
   grid-template-areas:
@@ -130,7 +130,7 @@ img {
 }
 
 @media screen and (min-width: 500px) {
-  body {
+  #root {
     grid-template-areas:
       "navigation header"
       "navigation content"
