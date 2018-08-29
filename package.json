@@ -23,6 +23,7 @@
     "eslint": "^5.3.0"
   },
   "dependencies": {
-    "components": "^0.1.0"
+    "components": "^0.1.0",
+    "parcel": "^1.9.7"
   }
 }
