@@ -1,4 +1,4 @@
-var welcomeUser = function welcomeUser(){
+export default function welcomeUser(){
     var userName = prompt('What\'s your name?');
 
     if(userName === ''){
@@ -10,7 +10,5 @@ var welcomeUser = function welcomeUser(){
           <h4>You're going to have a grand ol' time</h4>
         `;
     }
-};
-
-welcomeUser();
+}
 
