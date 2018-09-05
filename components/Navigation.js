@@ -2,14 +2,11 @@ export default function Navigation(){
     return `
       <div id="navigation">
         <ul class="container">
-          <li>first</li>
-          <li>second</li>
-          <li>third</li>
-          <li>first</li>
-          <li>second</li>
-          <li>third</li>
           <li>
             <a href="blog">blog</a>
+          </li>
+          <li>
+            <a href="contact">contact</a>
           </li>
           <li>
             <a href="projects">projects</a>

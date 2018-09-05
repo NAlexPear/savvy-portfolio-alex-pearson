@@ -83,6 +83,7 @@ img {
   left: 0;
   list-style: none;
   padding: 10px;
+  z-index: 1;
 }
 
 #navigation a + ul:hover,
