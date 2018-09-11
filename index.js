@@ -2,32 +2,13 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import * as State from './store';
 
-
-var State = {
-    'active': 'home',
-    'home': {
-        'links': [ 'blog', 'contact', 'projects' ],
-        'title': 'Welcome to My Portfolio Page'
-    },
-    'blog': {
-        'links': [ 'home', 'contact', 'projects' ],
-        'title': 'Welcome to My Blog'
-    },
-    'contact': {
-        'links': [ 'home', 'blog', 'projects' ],
-        'title': 'Contact me!'
-    },
-    'projects': {
-        'links': [ 'home' ],
-        'title': 'Gaze upon my projects, ye mighty, and despair'
-    },
-};
 
 var root = document.querySelector('#root');
 
 function handleNavigation(event){
-    var newState = State;
+    var newState = Object.assign({}, State);
 
     newState.active = event.target.textContent;
 
@@ -42,7 +23,7 @@ function render(state){
     root.innerHTML = `
         ${Navigation(state[state.active])}
         ${Header(state[state.active])}
-        ${Content()}
+        ${Content(state[state.active])}
         ${Footer()}
     `;
 

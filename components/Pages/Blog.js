@@ -1,31 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Alex's Blog Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <div id="navigation">
-    <ul class="container">
-      <li>
-        <a href="/">home</a>
-      </li>
-      <li>projects</li>
-    </ul>
-  </div>
-  <div id="header">
-    <div class="container">
-      <h1>Alex's Blog</h1>
-    </div>
-  </div>
-  <div id="content">
-    <ul class="container">
+export default `
+    <ul>
       <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quo omnis similique, commodi doloribus velit est culpa maiores pariatur corrupti quod quisquam tempora maxime dolores fuga id assumenda cum vero!</li>
       <li>Similique recusandae accusamus illum quidem, porro voluptate iure, totam fugit inventore voluptatem incidunt assumenda! Id porro ea nesciunt optio ad numquam fugit quisquam et hic explicabo, praesentium voluptatem. Nemo, fugiat?</li>
       <li>Dignissimos error eos amet deserunt ducimus animi dolorem in sit numquam earum. Earum natus eos, quos deserunt dolor eligendi porro odit esse cupiditate numquam, sed error, iusto deleniti sequi ipsam!</li>
@@ -37,11 +11,4 @@
       <li>Ullam natus ad dolor provident eum, consectetur iste distinctio itaque qui dicta, vitae veritatis nam eligendi eos tempora. Quae recusandae porro, dolores ratione nihil alias reiciendis doloribus eos fugit explicabo!</li>
       <li>Perferendis, in perspiciatis! Sed consequatur officiis asperiores sunt magnam enim sint natus saepe dolorem nisi, provident, in qui alias! A impedit vitae quisquam laudantium nihil eum, vel temporibus beatae inventore.</li>
     </ul>
-  </div>
-  <div id="footer">
-    <div class="container">
-      this is the bottom of the page
-    </div>
-  </div>
-</body>
-</html>
+`;
