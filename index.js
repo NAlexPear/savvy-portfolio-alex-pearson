@@ -7,15 +7,19 @@ import Footer from './components/Footer';
 var State = {
     'active': 'home',
     'home': {
+        'links': [ 'blog', 'contact', 'projects' ],
         'title': 'Welcome to My Portfolio Page'
     },
     'blog': {
+        'links': [ 'home', 'contact', 'projects' ],
         'title': 'Welcome to My Blog'
     },
     'contact': {
+        'links': [ 'home', 'blog', 'projects' ],
         'title': 'Contact me!'
     },
     'projects': {
+        'links': [ 'home' ],
         'title': 'Gaze upon my projects, ye mighty, and despair'
     },
 };
@@ -36,7 +40,7 @@ function render(state){
     var links;
 
     root.innerHTML = `
-        ${Navigation()}
+        ${Navigation(state[state.active])}
         ${Header(state[state.active])}
         ${Content()}
         ${Footer()}
