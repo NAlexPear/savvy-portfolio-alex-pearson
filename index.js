@@ -1,3 +1,4 @@
+import Navigo from 'navigo';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
@@ -6,20 +7,9 @@ import * as State from './store';
 
 
 var root = document.querySelector('#root');
-
-function handleNavigation(event){
-    var newState = Object.assign({}, State);
-
-    newState.active = event.target.textContent;
-
-    event.preventDefault();
-
-    render(newState); // eslint-disable-line
-}
+var router = new Navigo(window.location.origin); // returns a router Object
 
 function render(state){
-    var links;
-
     root.innerHTML = `
         ${Navigation(state[state.active])}
         ${Header(state[state.active])}
@@ -27,14 +17,18 @@ function render(state){
         ${Footer()}
     `;
 
-    links = document.querySelectorAll('#navigation a');
-
-    for(let i = 0; i < links.length; i++){
-        links[i].addEventListener(
-            'click',
-            handleNavigation
-        );
-    }
+    router.updatePageLinks();
 }
 
-render(State); // kicks off the whole shebang!
+function handleNavigation(activePage){
+    var newState = Object.assign({}, State);
+
+    newState.active = activePage;
+
+    render(newState);
+}
+
+router
+    .on('/:page', (params) => handleNavigation(params.page))
+    .on('/', () => handleNavigation('home'))
+    .resolve();

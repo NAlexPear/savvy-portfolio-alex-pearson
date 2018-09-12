@@ -23,6 +23,7 @@
     "eslint": "^5.3.0"
   },
   "dependencies": {
+    "navigo": "^7.1.2",
     "parcel": "^1.9.7"
   }
 }
