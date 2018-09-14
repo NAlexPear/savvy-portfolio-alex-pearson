@@ -1,1 +1,3 @@
-export default '<h3>These are my projects';
+export default function Projects(){
+    return '<h3>These are my projects';
+}
