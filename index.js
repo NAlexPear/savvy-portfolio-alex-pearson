@@ -9,9 +9,34 @@ import * as State from './store';
 
 var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin); // returns a router Object
-var newState = Object.assign({}, State);
+var store;
 
-function render(state){
+class Store{
+    constructor(state){
+        this.state = Object.assign({}, state);
+        this.listeners = [];
+    }
+
+    addStateListener(listener){
+        this.listeners.push(listener);
+    }
+
+    dispatch(reducer){
+        this.state = reducer(this.state);
+
+        this.listeners.forEach((listener) => listener());
+    }
+
+    getState(){
+        return this.state;
+    }
+}
+
+store = new Store(State);
+
+function render(){
+    var state = store.getState();
+
     root.innerHTML = `
         ${Navigation(state[state.active])}
         ${Header(state[state.active])}
@@ -23,9 +48,11 @@ function render(state){
 }
 
 function handleNavigation(activePage){
-    newState.active = activePage;
+    store.dispatch((state) => {
+        state.active = activePage;
 
-    render(newState);
+        return state;
+    });
 }
 
 router
@@ -36,7 +63,11 @@ router
 axios
     .get('https://jsonplaceholder.typicode.com/posts')
     .then((response) => {
-        newState.posts = response.data;
+        store.dispatch((state) => {
+            state.posts = response.data;
 
-        render(newState);
+            return state;
+        });
     });
+
+store.addStateListener(render);
