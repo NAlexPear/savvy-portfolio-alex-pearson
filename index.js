@@ -81,7 +81,11 @@ axios
     });
 
 axios
-    .get('https://api.github.com/users/nalexpear/repos')
+    .get('https://api.github.com/users/nalexpear/repos', {
+        'headers': {
+            'Authorization': 'token 9c955a18ad4414fd671fe5861bb9ec97fd180858'
+        }
+    })
     .then((response) => {
         store.dispatch((state) => {
             state.repos = response.data;

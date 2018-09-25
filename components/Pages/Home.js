@@ -12,7 +12,7 @@ function Repo(repo){
 
     return `
       <li>
-        <a href="${repo.url}">${name}</a>
+        <a href="${repo.html_url}">${name}</a>
       </li>
     `;
 }
