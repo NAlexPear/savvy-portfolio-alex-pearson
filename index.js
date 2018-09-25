@@ -80,4 +80,14 @@ axios
         });
     });
 
+axios
+    .get('https://api.github.com/users/nalexpear/repos')
+    .then((response) => {
+        store.dispatch((state) => {
+            state.repos = response.data;
+
+            return state;
+        });
+    });
+
 store.addStateListener(render);

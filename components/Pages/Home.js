@@ -1,4 +1,28 @@
-export default function Home(){
+import {
+    capitalize,
+    kebabCase
+} from 'lodash';
+
+
+function Repo(repo){
+    var name = kebabCase(repo.name)
+        .split('-')
+        .map(capitalize)
+        .join(' ');
+
+    return `
+      <li>
+        <a href="${repo.url}">${name}</a>
+      </li>
+    `;
+}
+
+export default function Home(state){
+    var repos = state
+        .repos
+        .map(Repo)
+        .join('');
+
     return `
       <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, natus? In delectus deserunt culpa suscipit, molestias sit placeat aspernatur quos cum vero. Eaque ad architecto, eos hic nulla qui maxime?</p>
       <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi natus, autem delectus architecto itaque atque consequuntur quaerat quo, voluptates aspernatur hic doloremque saepe iste tempore magni vel harum explicabo.</p>
@@ -25,6 +49,8 @@ export default function Home(){
         <li>Second</li>
         <li>Third</li>
       </ol>
-      <span>Hello</span>
+      <ol>
+        ${repos}
+      </ol>
   `;
 }

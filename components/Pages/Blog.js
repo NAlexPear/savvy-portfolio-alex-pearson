@@ -1,7 +1,8 @@
 import Post from '../Post';
 
-export default function Blog(posts){
-    return posts
+export default function Blog(state){
+    return state
+        .posts
         .map(Post)
         .join('');
 }
