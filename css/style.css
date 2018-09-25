@@ -126,7 +126,6 @@ img {
 #footer {
   background-color: tomato;
   grid-area: footer;
-  color: cadetblue;
   padding: 10px;
 }
 

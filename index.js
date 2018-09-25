@@ -41,7 +41,7 @@ function render(){
         ${Navigation(state[state.active])}
         ${Header(state[state.active])}
         ${Content(state)}
-        ${Footer()}
+        ${Footer(state)}
     `;
 
     router.updatePageLinks();
@@ -65,6 +65,16 @@ axios
     .then((response) => {
         store.dispatch((state) => {
             state.posts = response.data;
+
+            return state;
+        });
+    });
+
+axios
+    .get('http://api.openweathermap.org/data/2.5/weather?zip=63108&APPID=8940e272346dc1c7ca592d3e29539351')
+    .then((response) => {
+        store.dispatch((state) => {
+            state.weather = response.data;
 
             return state;
         });
