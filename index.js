@@ -71,7 +71,7 @@ axios
     });
 
 axios
-    .get('http://api.openweathermap.org/data/2.5/weather?zip=63108&APPID=8940e272346dc1c7ca592d3e29539351')
+    .get('https://api.openweathermap.org/data/2.5/weather?zip=63108&APPID=8940e272346dc1c7ca592d3e29539351')
     .then((response) => {
         store.dispatch((state) => {
             state.weather = response.data;
