@@ -1,6 +1,11 @@
 import axios from 'axios';
+import {
+    delay,
+    styler,
+    timeline,
+    tween
+} from 'popmotion';
 import Navigo from 'navigo';
-import { styler, timeline } from 'popmotion';
 import Content from './components/Content';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,29 +13,53 @@ import Navigation from './components/Navigation';
 import * as State from './store';
 
 
-var animation = timeline([
-    {
-        'track': 'location',
+var animations = {
+    'title': timeline([
+        {
+            'track': 'location',
+            'from': {
+                'x': 0
+            },
+            'to': {
+                'x': 100
+            },
+        },
+        {
+            'track': 'size',
+            'from': {
+                'color': '#ff0000',
+                'fontSize': '200%',
+            },
+            'to': {
+                'color': '#07c4dd',
+                'fontSize': '400%',
+            },
+            'duration': 500
+        },
+    ]),
+    'repos': tween({
         'from': {
+            'opacity': 0,
+            'scaleY': 0
+        },
+        'to': {
+            'opacity': '1',
+            'scaleY': 1
+        },
+        'duration': 1000
+    }),
+    'repo': tween({
+        'from': {
+            'opacity': 0,
+            'x': -100
+        },
+        'to': {
+            'opacity': 1,
             'x': 0
-        },
-        'to': {
-            'x': 100
-        },
-    },
-    {
-        'track': 'size',
-        'from': {
-            'color': '#ff0000',
-            'fontSize': '200%',
-        },
-        'to': {
-            'color': '#07c4dd',
-            'fontSize': '400%',
-        },
-        'duration': 2000
-    },
-]);
+        }
+    })
+};
+
 var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin); // returns a router Object
 var store;
@@ -60,6 +89,7 @@ store = new Store(State);
 
 function render(){
     var state = store.getState();
+    var repos;
 
     root.innerHTML = `
         ${Navigation(state[state.active])}
@@ -68,12 +98,30 @@ function render(){
         ${Footer(state)}
     `;
 
+    repos = document.querySelector('#repos');
+
+    if(repos && repos.children.length){
+        let repoContainer = styler(repos);
+        let repoLinks = Array
+            .from(repos.children)
+            .map(styler);
+
+        animations
+            .repos
+            .start({
+                'complete': () => repoLinks.forEach((link, idx) => delay(10 * idx).start({
+                    'complete': () => animations.repo.start(link.set)
+                })),
+                'update': repoContainer.set
+            });
+    }
+
     document
         .querySelector('h1')
         .addEventListener('click', (event) => {
             var title = styler(event.target);
 
-            animation.start((value) => {
+            animations.title.start((value) => {
                 title.set(value.size);
                 title.set(value.location);
             });
