@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Navigo from 'navigo';
+import { styler, timeline } from 'popmotion';
 import Content from './components/Content';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,6 +8,29 @@ import Navigation from './components/Navigation';
 import * as State from './store';
 
 
+var animation = timeline([
+    {
+        'track': 'location',
+        'from': {
+            'x': 0
+        },
+        'to': {
+            'x': 100
+        },
+    },
+    {
+        'track': 'size',
+        'from': {
+            'color': '#ff0000',
+            'fontSize': '200%',
+        },
+        'to': {
+            'color': '#07c4dd',
+            'fontSize': '400%',
+        },
+        'duration': 2000
+    },
+]);
 var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin); // returns a router Object
 var store;
@@ -43,6 +67,17 @@ function render(){
         ${Content(state)}
         ${Footer(state)}
     `;
+
+    document
+        .querySelector('h1')
+        .addEventListener('click', (event) => {
+            var title = styler(event.target);
+
+            animation.start((value) => {
+                title.set(value.size);
+                title.set(value.location);
+            });
+        });
 
     router.updatePageLinks();
 }
