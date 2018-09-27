@@ -1,0 +1,26 @@
+form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 5px;
+
+  [type=text],
+  [type=email] {
+    width: 70%;
+  }
+
+  [type=submit]{
+    background-color: lightgrey;
+
+    &:hover {
+      background-color: slategray;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+

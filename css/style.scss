@@ -1,3 +1,5 @@
+@import 'form';
+
 a {
   color: cadetblue;
 }
@@ -12,32 +14,6 @@ a {
     "footer";
   grid-template-rows: min-content min-content auto min-content;
 }
-
-form {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  margin: 5px;
-}
-
-input[type=text],
-input[type=email] {
-  width: 70%;
-}
-
-input[type=submit] {
-  background-color: lightgrey;
-}
-
-input[type=submit]:hover {
-  background-color: slategray;
-  color: white;
-  cursor: pointer;
-}
-
 label {
   font-family: 'Zilla Slab Highlight', cursive;
 }
@@ -74,36 +50,36 @@ img {
   padding: 5px;
   position: sticky;
   top: 0;
-}
 
-#navigation a + ul {
-  background-color: lightseagreen;
-  display: none;
-  position: absolute;
-  left: 0;
-  list-style: none;
-  padding: 10px;
-  z-index: 1;
-}
+  a + ul {
+    background-color: lightseagreen;
+    display: none;
+    position: absolute;
+    left: 0;
+    list-style: none;
+    padding: 10px;
+    z-index: 1;
+  }
 
-#navigation a + ul:hover,
-#navigation a:hover + ul {
-  display: flex;
-  flex-direction: column;
-  word-wrap: none;
-}
+  a + ul:hover,
+  a:hover + ul {
+    display: flex;
+    flex-direction: column;
+    word-wrap: none;
+  }
 
-#navigation > ul {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 0;
-}
+  > ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
 
-#navigation > ul > li {
-  display: inline;
-  position: relative;
+    > li {
+      display: inline;
+      position: relative;
+    }
+  }
 }
 
 #header {

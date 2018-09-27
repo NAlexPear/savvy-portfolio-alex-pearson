@@ -20,7 +20,8 @@
   "homepage": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson#readme",
   "devDependencies": {
     "cssnano": "^4.1.0",
-    "eslint": "^5.3.0"
+    "eslint": "^5.3.0",
+    "node-sass": "^4.9.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
