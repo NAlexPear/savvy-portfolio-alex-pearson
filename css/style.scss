@@ -4,6 +4,17 @@ a {
   color: cadetblue;
 }
 
+#repos {
+  background-color: papayawhip;
+  padding: 2rem;
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+#repos > li {
+  opacity: 0;
+}
+
 #root {
   margin: 0;
   display: grid;
@@ -16,6 +27,16 @@ a {
 }
 label {
   font-family: 'Zilla Slab Highlight', cursive;
+}
+
+h1 {
+  cursor: pointer;
+  opacity: 0.25;
+  transition: 0.15s opacity ease;
+}
+
+h1:hover {
+  opacity: 1;
 }
 
 h2 {
