@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import * as State from './store';
+import { add } from './example.rs';
 
 
 var animations = {
@@ -86,6 +87,8 @@ class Store{
 }
 
 store = new Store(State);
+
+// console.log('add => ', add(1,2));
 
 function render(){
     var state = store.getState();

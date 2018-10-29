@@ -1,7 +1,9 @@
 @import 'form';
 
+$primary: cadetblue;
+
 a {
-  color: cadetblue;
+  color: $primary;
 }
 
 #repos {
@@ -25,6 +27,7 @@ a {
     "footer";
   grid-template-rows: min-content min-content auto min-content;
 }
+
 label {
   font-family: 'Zilla Slab Highlight', cursive;
 }
@@ -66,7 +69,7 @@ img {
 
 #navigation {
   background-color: lightblue;
-  color: cadetblue;
+  color: $primary;
   grid-area: navigation;
   padding: 5px;
   position: sticky;
