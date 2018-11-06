@@ -1,0 +1,60 @@
+body {
+  background-color: orchid;
+}
+
+h1 {
+  background-color: hotpink;
+  font-size: 3em;
+}
+
+h2 {
+  background-color: orangered;
+}
+
+h3 {
+  font-style: italic;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  font-style: italic;
+}
+
+ul {
+  background-color: teal;
+}
+
+.brand {
+  color: #07c4dd;
+}
+
+.emphasis {
+  font-weight: bold;
+}
+
+#middle {
+  font-size: 2em;
+  font-style: italic;
+}
+
+#navigation {
+  background-color: cyan;
+}
+
+#header {
+  background-color: tomato;
+}
+
+#content {
+  background-color: orchid;
+  padding: 20px;
+}
+
+#footer {
+  background-color: chartreuse;
+}
