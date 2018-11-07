@@ -17,8 +17,9 @@ h3 {
 
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto;
+  max-width: 300px;
+  width: 80%;
 }
 
 p {
@@ -31,6 +32,12 @@ ul {
 
 .brand {
   color: #07c4dd;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 90%;
 }
 
 .emphasis {
