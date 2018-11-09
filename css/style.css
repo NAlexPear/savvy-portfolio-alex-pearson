@@ -30,7 +30,8 @@ ul {
   background-color: teal;
 }
 
-.brand {
+#header h1,
+#header h2 {
   color: #07c4dd;
 }
 
@@ -49,10 +50,6 @@ ul {
   font-style: italic;
 }
 
-#navigation {
-  background-color: cyan;
-}
-
 #header {
   background-color: tomato;
 }
@@ -64,4 +61,20 @@ ul {
 
 #footer {
   background-color: chartreuse;
+}
+
+#navigation {
+  background-color: cyan;
+}
+
+#navigation > ul > li {
+  display: inline;
+}
+
+#navigation .dropdown {
+  display: none;
+}
+
+#navigation a:hover + .dropdown {
+  display: block;
 }
