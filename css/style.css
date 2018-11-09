@@ -1,5 +1,6 @@
 body {
   background-color: orchid;
+  margin: 0;
 }
 
 h1 {
@@ -65,16 +66,26 @@ ul {
 
 #navigation {
   background-color: cyan;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 #navigation > ul > li {
   display: inline;
+  padding: 10px;
+  position: relative;
 }
 
 #navigation .dropdown {
   display: none;
+  left: 0;
+  position: absolute;
+  top: 28px;
 }
 
-#navigation a:hover + .dropdown {
+#navigation a:hover + .dropdown,
+#navigation a + .dropdown:hover {
   display: block;
 }
