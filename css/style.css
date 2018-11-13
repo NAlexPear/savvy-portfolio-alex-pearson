@@ -1,11 +1,11 @@
 body {
   background-color: orchid;
-  margin: 0;
 }
 
 h1 {
   background-color: hotpink;
-  font-size: 3em;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2em;
 }
 
 h2 {
@@ -72,9 +72,18 @@ ul {
   width: 100vw;
 }
 
+#navigation > ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
 #navigation > ul > li {
   display: inline;
-  padding: 10px;
+  margin: 10px;
   position: relative;
 }
 
