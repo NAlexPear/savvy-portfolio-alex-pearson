@@ -2,7 +2,7 @@ body {
   background-color: orchid;
   display: grid;
   min-height: 100vh;
-  grid-template-rows: min-content min-content auto min-content;
+  grid-template-rows: min-content 30vh auto min-content;
   grid-template-areas:
     "navigation"
     "header"
@@ -39,11 +39,6 @@ ul {
   background-color: teal;
 }
 
-#header h1,
-#header h2 {
-  color: #07c4dd;
-}
-
 .container {
   margin: 0 auto;
   max-width: 900px;
@@ -60,8 +55,14 @@ ul {
 }
 
 #header {
-  background-color: tomato;
+  background-image: url(https://az415828.vo.msecnd.net/pictures/9/258/9258430/lowres/343708686.jpg);
+  background-position: center right;
   grid-area: header;
+}
+
+#header h1,
+#header h2 {
+  color: #07c4dd;
 }
 
 #content {
@@ -112,7 +113,7 @@ ul {
 @media (min-width: 750px) {
   body {
     grid-template-columns: 15% auto;
-    grid-template-rows: min-content auto min-content;
+    grid-template-rows: 40vh auto min-content;
     grid-template-areas:
       "navigation header"
       "navigation content"
