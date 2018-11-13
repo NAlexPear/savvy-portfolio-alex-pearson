@@ -1,5 +1,13 @@
 body {
   background-color: orchid;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: min-content min-content auto min-content;
+  grid-template-areas:
+    "navigation"
+    "header"
+    "content"
+    "footer";
 }
 
 h1 {
@@ -53,23 +61,25 @@ ul {
 
 #header {
   background-color: tomato;
+  grid-area: header;
 }
 
 #content {
   background-color: orchid;
+  grid-area: content;
   padding: 20px;
 }
 
 #footer {
   background-color: chartreuse;
+  grid-area: footer;
 }
 
 #navigation {
   background-color: cyan;
-  left: 0;
-  position: fixed;
+  grid-area: navigation;
+  position: sticky;
   top: 0;
-  width: 100vw;
 }
 
 #navigation > ul {
@@ -97,4 +107,19 @@ ul {
 #navigation a:hover + .dropdown,
 #navigation a + .dropdown:hover {
   display: block;
+}
+
+@media (min-width: 750px) {
+  body {
+    grid-template-columns: 15% auto;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas:
+      "navigation header"
+      "navigation content"
+      "navigation footer";
+  }
+
+  #navigation > ul {
+    flex-direction: column;
+  }
 }
