@@ -1,4 +1,4 @@
-body {
+#root {
   background-color: orchid;
   display: grid;
   min-height: 100vh;
@@ -111,7 +111,7 @@ ul {
 }
 
 @media (min-width: 750px) {
-  body {
+  #root {
     grid-template-columns: 15% auto;
     grid-template-rows: 40vh auto min-content;
     grid-template-areas:
