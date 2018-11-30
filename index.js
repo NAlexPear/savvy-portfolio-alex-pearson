@@ -16,3 +16,13 @@ document.querySelector('#root').innerHTML = `
 `;
 
 greet();
+
+document
+    .querySelector('a')
+    .addEventListener(
+        'click',
+        (event) => {
+            event.preventDefault();
+            console.log(event.target.textContent);
+        }
+    );
