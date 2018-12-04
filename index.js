@@ -9,15 +9,19 @@ var State = {
     'active': 'home',
     'home': {
         'title': 'Welcome to my Savvy Coders Portfolio Project',
+        'links': [ 'blog', 'contact', 'projects' ]
     },
     'blog': {
-        'title': 'Please read my insightful Blog'
+        'title': 'Please read my insightful Blog',
+        'links': [ 'home', 'contact', 'projects' ]
     },
     'contact': {
-        'title': 'Contact Me'
+        'title': 'Contact Me',
+        'links': [ 'home', 'blog', 'projects' ]
     },
     'projects': {
-        'title': 'Look upon my works, ye mighty, and despair'
+        'title': 'Look upon my works, ye mighty, and despair',
+        'links': [ 'home', 'blog', 'contact' ]
     }
 };
 
@@ -45,20 +49,12 @@ function render(state){
 
     links = document.querySelectorAll('#navigation a');
 
-    links[0].addEventListener(
-        'click',
-        handleNavigation
-    );
-
-    links[1].addEventListener(
-        'click',
-        handleNavigation
-    );
-
-    links[2].addEventListener(
-        'click',
-        handleNavigation
-    );
+    for(let i = 0; i < links.length; i++){
+        links[i].addEventListener(
+            'click',
+            handleNavigation
+        );
+    }
 }
 
 render(State);
