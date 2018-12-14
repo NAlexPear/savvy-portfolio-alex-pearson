@@ -9,6 +9,7 @@ import Navigo from 'navigo';
 var router = new Navigo(window.location.origin);
 
 var State = {
+    'posts': [],
     'active': 'home',
     'home': {
         'title': 'Welcome to my Savvy Coders Portfolio Project',
@@ -53,5 +54,13 @@ router
     .on('/:page', handleNavigation)
     .on('/', () => handleNavigation({ 'page': 'home' }))
     .resolve();
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((posts) => {
+        State.posts = posts;
+
+        render(State);
+    });
 
 
