@@ -170,9 +170,7 @@
         "no-proto": "error",
         "no-restricted-imports": "error",
         "no-restricted-modules": "error",
-        "no-restricted-syntax": [ "error",
-            "ClassDeclaration"
-        ],
+        "no-restricted-syntax": "off",
         "no-return-assign": "off",
         "no-script-url": "error",
         "no-self-compare": "error",
