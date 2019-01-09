@@ -1,10 +1,10 @@
 import Content from './src/Content';
 import Footer from './src/Footer';
-import greet from './src/Greeting';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
 import Navigo from 'navigo';
 import Store from './src/Store';
+import { render, html } from 'lit-html';
 
 
 var router = new Navigo(window.location.origin);
@@ -34,6 +34,12 @@ var State = {
 
 
 var store = new Store(State);
+var App = (state) => html`
+  ${Navigation(state)}
+  ${Header(state)}
+  ${Content(state)}
+  ${Footer(state)}
+`;
 
 function handleNavigation(params){
     store.dispatch((state) => {
@@ -43,20 +49,8 @@ function handleNavigation(params){
     });
 }
 
-function render(state){
-    root.innerHTML = `
-      ${Navigation(state)}
-      ${Header(state)}
-      ${Content(state)}
-      ${Footer(state)}
-  `;
-
-    greet();
-
-    router.updatePageLinks();
-}
-
-store.addListener(render);
+store.addListener((state) => render(App(state), root));
+store.addListener(() => router.updatePageLinks());
 
 router
     .on('/:page', handleNavigation)

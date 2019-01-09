@@ -1,9 +1,10 @@
+import { html } from 'lit-html';
 import { capitalize } from 'lodash';
 import * as Screens from './Screens';
 
 
 export default function Content(state){
-    return `
+    return html`
       <div id="content">
         <div class="container">
           ${Screens[capitalize(state.active)](state)}
