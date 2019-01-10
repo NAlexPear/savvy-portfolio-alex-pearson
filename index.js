@@ -1,6 +1,6 @@
 import Content from './src/Content';
 import Footer from './src/Footer';
-import greet from './src/Greeting';
+// import greet from './src/Greeting';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
 import Navigo from 'navigo';
@@ -58,12 +58,13 @@ function start(state){
 }
 
 store.addListener(start);
-store.addListener(() => router.updatePageLinks());
 
 router
     .on('/:page', handleNavigation)
     .on('/', () => handleNavigation({ 'page': 'home' }))
     .resolve();
+
+router.updatePageLinks();
 
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then((response) => response.json())
