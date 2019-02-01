@@ -1,0 +1,28 @@
+h3 {
+  background-color: blue;
+}
+
+p {
+  color: rgb(55, 211, 41);
+  font-size: 50px;
+}
+
+li {
+  color: hotpink;
+}
+
+.aquify {
+  background-color: aqua;
+}
+
+.greenify {
+  color: chartreuse;
+}
+
+.tomatify {
+  color: tomato;
+}
+
+#content {
+  background-color: springgreen;
+}
