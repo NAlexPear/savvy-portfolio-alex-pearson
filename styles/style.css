@@ -1,28 +1,71 @@
-h3 {
-  background-color: blue;
+body {
+  color: #242424;
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  margin: 0;
 }
 
-p {
-  color: rgb(55, 211, 41);
-  font-size: 50px;
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-li {
-  color: hotpink;
+h1 {
+  margin: 0;
 }
 
-.aquify {
-  background-color: aqua;
+.container {
+  margin: 0 auto;
+  max-width: 960px;
 }
 
-.greenify {
-  color: chartreuse;
+#navigation,
+#footer {
+  background-color: #a8a8a8;
+  padding: 20px;
 }
 
-.tomatify {
-  color: tomato;
+#header,
+#footer {
+  padding: 15px;
+}
+
+#navigation a {
+  text-transform: uppercase;
+}
+
+#navigation a,
+#footer a {
+  color: black;
+  text-decoration: none;
+  transition: 0.1s color ease;
+}
+
+#navigation a:hover,
+#footer a:hover {
+  border-bottom: 3px solid whitesmoke;
+  color: whitesmoke;
+}
+
+#navigation ul,
+#footer ul {
+  list-style: none;
+}
+
+#navigation li,
+#footer li  {
+  display: inline;
+  padding: 5px;
+}
+
+#header {
+  background-color: whitesmoke;
+}
+
+#header img {
+  border-radius: 50%;
 }
 
 #content {
-  background-color: springgreen;
+  background-color: white;
 }
