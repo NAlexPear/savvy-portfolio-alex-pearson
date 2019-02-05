@@ -1,7 +1,7 @@
 body {
   color: #242424;
-  font-family: 'Georgia', serif;
-  font-size: 20px;
+  font-family: 'Goudy Bookletter 1911', serif;
+  font-size: 25px;
   margin: 0;
 }
 
@@ -10,8 +10,10 @@ ul {
   padding: 0;
 }
 
-h1 {
-  margin: 0;
+h1,
+h2,
+h3 {
+  margin: 0.5rem;
 }
 
 h2 {
@@ -21,7 +23,7 @@ h2 {
 h3 {
   color: #747373;
   font-weight: 400;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
