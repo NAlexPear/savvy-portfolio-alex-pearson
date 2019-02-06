@@ -64,7 +64,7 @@ h3 {
   list-style: none;
 }
 
-#navigation li,
+#navigation > ul > li,
 #footer li  {
   display: inline;
   padding: 5px;
@@ -72,6 +72,7 @@ h3 {
 
 #header {
   background-color: whitesmoke;
+  padding-top: 150px;
 }
 
 #content img {
@@ -93,4 +94,27 @@ h3 {
   margin: 3px;
   line-height: 50%;
   vertical-align: middle;
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#navigation > ul > li {
+  position: relative;
+}
+
+#navigation > ul > li:hover > ul {
+  display: block;
+}
+
+#navigation > ul > li > ul {
+  background-color: #535353;
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
 }
