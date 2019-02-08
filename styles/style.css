@@ -1,8 +1,11 @@
 body {
   color: #242424;
+  display: grid;
   font-family: 'Goudy Bookletter 1911', serif;
   font-size: 25px;
+  grid-template-rows: min-content min-content auto min-content;
   margin: 0;
+  min-height: 100vh;
 }
 
 ul {
@@ -72,7 +75,6 @@ h3 {
 
 #header {
   background-color: whitesmoke;
-  padding-top: 150px;
 }
 
 #content img {
@@ -97,10 +99,8 @@ h3 {
 }
 
 #navigation {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
 }
 
 #navigation > ul > li {
