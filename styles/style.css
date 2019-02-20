@@ -1,4 +1,4 @@
-body {
+#root {
   color: #242424;
   display: grid;
   font-family: 'Goudy Bookletter 1911', serif;
@@ -139,7 +139,7 @@ h3 {
 }
 
 @media(min-width: 800px){
-  body {
+  #root {
     grid-template-areas: "navigation  header"
                          "navigation  content"
                          "navigation  footer";
