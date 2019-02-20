@@ -7,8 +7,8 @@ import Navigation from './src/Navigation';
 var root = document.querySelector('#root');
 
 root.innerHTML = `
-  ${Navigation}
-  ${Header}
-  ${Content}
-  ${Footer}
+  ${Navigation()}
+  ${Header('Welcome to my Savvy Coders website!')}
+  ${Content()}
+  ${Footer()}
 `;
