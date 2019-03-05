@@ -2,21 +2,14 @@ import Content from './src/Content';
 import Footer from './src/Footer';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
+import { Blog, Contact, Home, Projects } from './state';
 import { startCase } from 'lodash';
 
 var State = {
-    'Home': {
-        'title': 'Welcome to Alex\'s Savvy Coder Website'
-    },
-    'Blog': {
-        'title': 'Read my words and stuff'
-    },
-    'Contact': {
-        'title': 'Contact Alex'
-    },
-    'Projects': {
-        'title': 'Behold my works, ye mighty, and despair'
-    }
+    'Home': Home,
+    'Blog': Blog,
+    'Contact': Contact,
+    'Projects': Projects
 };
 
 var root = document.querySelector('#root');

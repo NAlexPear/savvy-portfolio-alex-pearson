@@ -1,4 +1,7 @@
-export default function Navigation(){
+function buildLinks(links){
+    //
+}
+export default function Navigation(state){
     return `
     <div id="navigation">
       <ul class="container">
