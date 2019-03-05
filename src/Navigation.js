@@ -3,13 +3,13 @@ export default function Navigation(){
     <div id="navigation">
       <ul class="container">
         <li>
-          <a href="./blog">Blog</a>
+          <a href="./blog">blog</a>
         </li>
         <li>
-          <a href="./contact/">Contact</a>
+          <a href="./contact/">contact</a>
         </li>
         <li>
-          <a href="./projects/">Projects</a>
+          <a href="./projects/">projects</a>
           <ul>
             <li><a href="">First</a></li>
             <li><a href="">Second</a></li>

@@ -2,7 +2,7 @@ import Content from './src/Content';
 import Footer from './src/Footer';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
-
+import { startCase } from 'lodash';
 
 var State = {
     'Home': {
@@ -21,7 +21,16 @@ var State = {
 
 var root = document.querySelector('#root');
 
+function handleNavigation(event){
+    var destination = startCase(event.target.textContent);
+
+    event.preventDefault();
+
+    render(State[destination]); // eslint-disable-line
+}
+
 function render(state){
+    var i = 0;
     var links;
 
     root.innerHTML = `
@@ -33,23 +42,11 @@ function render(state){
 
     links = document.querySelectorAll('#navigation > ul > li > a');
 
-    links[0].addEventListener('click', (event) => {
-        event.preventDefault();
+    while(i < links.length){
+        links[i].addEventListener('click', handleNavigation);
 
-        render(State.Blog);
-    });
-
-    links[1].addEventListener('click', (event) => {
-        event.preventDefault();
-
-        render(State.Contact);
-    });
-
-    links[2].addEventListener('click', (event) => {
-        event.preventDefault();
-
-        render(State.Projects);
-    });
+        i++;
+    }
 }
 
 render(State.Home);
