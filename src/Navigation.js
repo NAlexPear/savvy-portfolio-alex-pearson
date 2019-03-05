@@ -1,24 +1,25 @@
 function buildLinks(links){
-    //
+    var i = 0;
+    var linkList = '' ;
+
+    while(i < links.length){
+        linkList += `
+          <li>
+            <a href="./${links[i]}">${links[i]}</a>
+          </li>
+        `;
+
+        i++;
+    }
+
+    return linkList;
 }
+
 export default function Navigation(state){
     return `
     <div id="navigation">
       <ul class="container">
-        <li>
-          <a href="./blog">blog</a>
-        </li>
-        <li>
-          <a href="./contact/">contact</a>
-        </li>
-        <li>
-          <a href="./projects/">projects</a>
-          <ul>
-            <li><a href="">First</a></li>
-            <li><a href="">Second</a></li>
-            <li><a href="">Third</a></li>
-          </ul>
-        </li>
+        ${buildLinks(state.links)}
       </ul>
     </div>
   `;
