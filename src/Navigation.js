@@ -1,3 +1,5 @@
+import { lowerCase } from 'lodash';
+
 function buildLinks(links){
     var i = 0;
     var linkList = '' ;
@@ -5,7 +7,9 @@ function buildLinks(links){
     while(i < links.length){
         linkList += `
           <li>
-            <a href="./${links[i]}">${links[i]}</a>
+            <a data-navigo href="./${lowerCase(links[i])}">
+              ${links[i]}
+            </a>
           </li>
         `;
 

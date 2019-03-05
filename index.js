@@ -2,30 +2,14 @@ import Content from './src/Content';
 import Footer from './src/Footer';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
-import { Blog, Contact, Home, Projects } from './state';
+import * as State from './state';
 import { startCase } from 'lodash';
+import Navigo from 'navigo';
 
-var State = {
-    'Home': Home,
-    'Blog': Blog,
-    'Contact': Contact,
-    'Projects': Projects
-};
-
+var router = new Navigo(location.origin);
 var root = document.querySelector('#root');
 
-function handleNavigation(event){
-    var destination = startCase(event.target.textContent);
-
-    event.preventDefault();
-
-    render(State[destination]); // eslint-disable-line
-}
-
 function render(state){
-    var i = 0;
-    var links;
-
     root.innerHTML = `
       ${Navigation(state)}
       ${Header(state.title)}
@@ -33,13 +17,17 @@ function render(state){
       ${Footer(state)}
     `;
 
-    links = document.querySelectorAll('#navigation > ul > li > a');
-
-    while(i < links.length){
-        links[i].addEventListener('click', handleNavigation);
-
-        i++;
-    }
+    router.updatePageLinks();
 }
 
-render(State.Home);
+function handleNavigation(params){
+    var destination = startCase(params.page);
+
+    render(State[destination]);
+}
+
+router
+    .on('/:page', handleNavigation)
+    .on('/', () => handleNavigation({ 'page': 'Home' }))
+    .resolve();
+
