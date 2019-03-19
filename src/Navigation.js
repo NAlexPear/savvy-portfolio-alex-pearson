@@ -28,7 +28,7 @@ export default function Navigation(state){
     return `
     <div id="navigation">
       <ul class="container">
-        ${buildLinks(state.links)}
+        ${buildLinks(state[state.active].links)}
       </ul>
     </div>
   `;

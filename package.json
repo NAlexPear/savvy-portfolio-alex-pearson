@@ -23,6 +23,7 @@
     "parcel-bundler": "^1.11.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "navigo": "^7.1.2"
   }
