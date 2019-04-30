@@ -1,0 +1,24 @@
+{
+  "name": "AlexPearson",
+  "version": "1.0.0",
+  "description": "![my face](https://avatars3.githubusercontent.com/u/9038489?s=460&v=4)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAlexPear/savvy-portfolio-alex-pearson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson/issues"
+  },
+  "homepage": "https://github.com/NAlexPear/savvy-portfolio-alex-pearson#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
