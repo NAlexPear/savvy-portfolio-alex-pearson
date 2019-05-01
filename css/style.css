@@ -2,12 +2,36 @@ h1 {
   font-family: Impact;
 }
 
-
-.highlight {
-  background-color: yellow;
-  color: chartreuse;
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
 }
 
-.hotpink {
-  color: hotpink;
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+#navigation {
+  background-color: coral;
+}
+
+#header {
+  background-color: blue;
+  border: 5px solid hotpink;
+  padding: 50px;
+}
+
+#content {
+  background-color: papayawhip;
+  padding: 10px;
+}
+
+#footer {
+  background-color: pink;
+  border: 5px solid hotpink;
+  padding: 10px;
 }
