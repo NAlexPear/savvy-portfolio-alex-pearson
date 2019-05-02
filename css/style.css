@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 h1 {
   font-family: Impact;
 }
@@ -17,6 +21,14 @@ img {
 
 #navigation {
   background-color: coral;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+#navigation li {
+  display: inline;
 }
 
 #header {
