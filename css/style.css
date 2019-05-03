@@ -27,8 +27,28 @@ img {
   width: 100%;
 }
 
-#navigation li {
+#navigation > ul > li {
   display: inline;
+}
+
+#navigation li:hover {
+  background-color: darkorange;
+}
+
+#navigation li {
+  position: relative;
+}
+
+#navigation ul ul {
+  background-color: hotpink;
+  display: none;
+  position: absolute;
+  right: 0;
+}
+
+#navigation a:hover + ul,
+#navigation a + ul:hover {
+  display: block;
 }
 
 #header {
