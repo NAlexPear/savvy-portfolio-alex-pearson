@@ -4,10 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Conact Alex</title>
+  <title>Contact Alex</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <h1>Contact Alex</h1>
+  <form action="https://formspree.io/alex@savvycoders.com" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+
+    <label for="intent">What would you like to message me about?</label>
+    <input type="radio" name="intent" value="hire" checked>
+    <div>
+      <input type="radio" name="intent" value="information">
+      <span>Get more information</span>
+    </div>
+    <input type="radio" name="intent" value="emergency">EMERGENCY!
+    <input type="submit" value="Submit me!">
+  </form>
 </body>
 </html>
