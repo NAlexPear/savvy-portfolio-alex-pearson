@@ -5,8 +5,9 @@ body {
                        "content"
                        "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content 1fr min-content;
+  grid-template-rows: min-content min-content auto min-content;
   margin: 0;
+  min-height: 100vh;
 }
 
 h1 {
@@ -27,6 +28,7 @@ img {
 
 #navigation {
   background-color: coral;
+  grid-area: navigation;
   position: sticky;
   top: 0;
   right: 0;
@@ -66,15 +68,32 @@ img {
 #header {
   background-color: blue;
   border: 5px solid hotpink;
+  grid-area: header;
 }
 
 #content {
   background-color: papayawhip;
+  grid-area: content;
   padding: 10px;
 }
 
 #footer {
   background-color: pink;
   border: 5px solid hotpink;
+  grid-area: footer;
   padding: 10px;
+}
+
+@media (min-width: 900px) {
+  body {
+    grid-template-areas: "navigation header"
+                         "navigation content"
+                         "navigation footer";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: min-content auto min-content;
+  }
+
+  #navigation > ul {
+    flex-direction: column;
+  }
 }
