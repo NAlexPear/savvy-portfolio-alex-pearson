@@ -33,6 +33,12 @@ p {
   width: 100%;
 }
 
+.excited {
+  color: purple;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 #navigation {
   background-color: coral;
   grid-area: navigation;
