@@ -6,9 +6,13 @@ import Footer from './components/Footer';
 
 const root = document.querySelector('#root');
 
+const state = {
+    'title': 'Welcome to my Savvy Coders Website'
+};
+
 root.innerHTML = `
-  ${Navigation}
-  ${Header}
-  ${Content}
-  ${Footer}
+  ${Navigation(state)}
+  ${Header(state)}
+  ${Content(state)}
+  ${Footer(state)}
 `;
