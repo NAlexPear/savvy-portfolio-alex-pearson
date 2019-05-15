@@ -11,8 +11,12 @@ const state = {
 };
 
 root.innerHTML = `
-  ${Navigation(state)}
-  ${Header(state)}
-  ${Content(state)}
-  ${Footer(state)}
-`;
+    ${Navigation(state)}
+    ${Header(state)}
+    ${Content(state)}
+    ${Footer(state)}
+  `;
+
+document
+    .querySelector('li > a')
+    .addEventListener('click', (event) => event.preventDefault());
