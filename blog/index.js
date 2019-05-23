@@ -34,9 +34,7 @@ function Post(post){
 function Content(items){
     let content = '';
 
-    for(let i = 0; i < items.length; i++){
-        content = `${content}${Post(items[i])}`;
-    }
+    items.forEach((item) => content = `${content}${Post(item)}`);
 
     return content;
 }
