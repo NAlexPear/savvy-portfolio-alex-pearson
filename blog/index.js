@@ -1,42 +1,52 @@
 const posts = [
     {
-        'author': 'Benedict Cumberbund',
-        'title': 'Celebrity Crime Skyrockets!',
-        'blurb': 'Lorem ipsum dolor sit amet'
+        'title': 'First Post',
+        'subtitle': 'Not the Worst Post',
+        'lede': 'Leading the way!',
+        'body': 'First Post, Coast-to-Coast'
     },
     {
-        'author': 'Benedict Cumberbund',
-        'title': 'I look like an otter',
-        'blurb': 'Lorem ipsum dolor sit amet'
+        'title': 'Second Post',
+        'subtitle': 'Another',
+        'lede': 'Mead for the lede',
+        'body': 'This is the next post, better than the first post'
     },
     {
-        'author': 'Benedict Cumberbund',
-        'title': 'Dr. Strange: A retrospective',
-        'blurb': 'Lorem ipsum dolor sit amet'
-    },
-    {
-        'author': 'Agatha Christie',
-        'title': 'Murder on the JavaScript Express',
-        'blurb': 'Lorem ipsum dolor sit amet'
+        'title': 'Third Post',
+        'subtitle': 'Hello posts',
+        'lede': 'yet another lede',
+        'body': 'And yet another post, how wonderful!'
     }
 ];
+
+function getSubtitles(post){
+    let subtitles = '';
+
+    if(post.subtitle){
+        subtitles += `
+            <h3>${post.subtitle}</h3>
+            <h4>${post.lede}</h4>
+        `;
+    }
+
+    return subtitles;
+}
 
 function Post(post){
     return `
       <div>
         <h2>${post.title}</h2>
-        <h3>by: ${post.author}</h3>
-        <p>${post.blurb}</p>
+        ${getSubtitles(post)}
+        <hr>
+        <p>${post.body}</p>
       </div>
+      <hr>
     `;
 }
 
-function Content(items){
-    let content = '';
 
-    items.forEach((item) => content = `${content}${Post(item)}`);
+document.querySelector('#content').innerHTML = posts.map(Post).join('');
 
-    return content;
-}
-
-document.querySelector('#content').innerHTML = Content(posts);
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((guestPosts) => document.querySelector('#content').innerHTML += guestPosts.map(Post).join(''));
